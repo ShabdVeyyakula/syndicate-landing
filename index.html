@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <title>Syndicate</title>
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        font-family: Poppins, sans-serif;
+        overflow-x: hidden;
+      }
+
+      header {
+        background-color: black;
+        color: white;
+        height: 800px; /* Adjusted height */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; /* Ensure content starts at the top */
+        padding: 20px 50px;
+      }
+
+      .navbar {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+
+      .navbar-links {
+        display: flex;
+        gap: 20px;
+      }
+
+      .navbar a {
+        color: rgb(170, 170, 170);
+        text-decoration: none;
+        padding: 5px 15px;
+      }
+
+      .navbar a:hover {
+        background-color: white;
+        color: black;
+      }
+
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .header-content {
+        max-width: 50%;
+      }
+
+      .header-main-text {
+        font-size: 66px;
+      }
+
+      .section-text {
+        font-size: 46px;
+        font-weight: 400;
+      }
+
+      .header-sub-text {
+        font-size: 18px;
+        margin-top: 10px;
+        color: rgb(54, 54, 54);
+      }
+
+      .landing-image {
+        width: 40%;
+        height: 440px; /* Adjust for desired height */
+        margin-left: 0px;
+        margin-right: 15%;
+      }
+
+      .main-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10%;
+      }
+
+      .highlight {
+        color: #3800ae; /* Bright green */
+      }
+
+      .card-container {
+        display: flex;
+        justify-content: space-between;
+        max-width: 1000px;
+        margin: 70px auto;
+      }
+
+      /* Individual card styling */
+      .feature-card {
+        background-color: white;
+        width: 23%; /* Adjust as per requirement */
+        padding: 20px;
+        box-sizing: border-box;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        border-radius: 10px;
+      }
+
+      /* Gradient icon container */
+      .icon-container {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: linear-gradient(
+          135deg,
+          #3800ae,
+          #6b3bd9
+        ); /* Adjusted gradient */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 15px;
+      }
+
+      /* Placeholder icon (you can replace this with a proper icon) */
+      .icon {
+        color: white;
+        font-size: 24px;
+      }
+
+      .feature-title {
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      /* In-depth Analysis Section Styles */
+      .analysis-section {
+        max-width: 1500px;
+        margin: 50px auto;
+        padding: 30px;
+        background-color: #ffffff; /* A light gray background for contrast */
+        border-radius: 5px;
+        margin-left: 20%;
+      }
+
+      .analysis-content {
+        display: flex;
+        align-items: center; /* Vertically center the content */
+      }
+
+      .analysis-image {
+        width: 45%; /* Adjust as per requirement */
+        margin: 0 5% 0 0; /* Space between image and text */
+      }
+
+      .analysis-text {
+        width: 50%;
+        text-align: leftv;
+      }
+
+      .analysis-text h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+
+      .analysis-text p {
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        width: 70%;
+        text-align: left;
+      }
+
+      .learn-more-btn {
+        background-color: #3800ae;
+        color: #fff;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        display: inline-block;
+        transition: background-color 0.3s;
+      }
+
+      .learn-more-btn:hover {
+        background-color: #6b3bd9; /* Slightly lighter shade for hover effect */
+      }
+
+      /* For the second section to invert the order */
+      .analysis-section:nth-child(2) .analysis-image {
+        order: 2; /* Make the image come second */
+        margin: 0 0 0 5%; /* Adjust margin for spacing */
+      }
+
+      .analysis-section:nth-child(2) .analysis-text {
+        order: 1; /* Make the text come first */
+      }
+
+      /* User Testimonials Section Styles */
+      .testimonials-section {
+        width: 100vw;
+        padding: 30px 0;
+        background: radial-gradient(
+          circle at center,
+          rgb(0, 0, 0),
+          #000000
+        ); /* Graceful radial gradient originating from the center */
+        overflow: hidden; /* To account for any horizontal scrolling caused by full viewport width */
+      }
+
+      .testimonials-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 30px;
+        box-sizing: border-box;
+      }
+
+      .testimonials-section h2 {
+        font-size: 28px;
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .testimonial {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 30%;
+        margin: 0 1.66%;
+        box-sizing: border-box;
+        border-radius: 10px;
+        padding: 5px;
+        height: 200px;
+        background-color: #3b45f1;
+        color: white;
+        box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+        box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+        margin-bottom: 10%;
+      }
+
+      .user-image {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+      }
+
+      blockquote {
+        font-size: 14px;
+        line-height: 1.5;
+        margin: 0 0 10px;
+        text-align: center;
+        margin-top: 12px;
+      }
+
+      p {
+        font-size: 14px;
+        text-align: center;
+      }
+
+      /* Flexbox for testimonials */
+      .testimonials-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <div class="logo">Syndicate</div>
+        <div class="navbar-links">
+          <a href="#">Home</a>
+          <a href="#">Service</a>
+          <a href="#">Testimonials</a>
+        </div>
+      </div>
+
+      <div class="main-content">
+        <div class="header-content">
+          <div class="header-main-text">
+            Achieve <br />
+            <span class="highlight">Financial Goals</span> <br />
+            Together
+          </div>
+          <div class="header-sub-text">
+            Democratizing the investment process through collaborative stock
+            trading.
+          </div>
+        </div>
+        <div style="width: 30%"></div>
+
+        <div class="landing-image">
+          <img src="landingimg.png" alt="" style="width: 130%" />
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <div style="height: 50px"></div>
+      <center>
+        <div class="section-text">Group financial investment</div>
+      </center>
+
+      <div class="card-container">
+        <!-- Card 1 -->
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="icon-container">
+            <span class="icon">👥</span>
+            <!-- Placeholder icon -->
+          </div>
+          <div class="feature-title">Create Groups</div>
+          <div class="feature-description">Join or Create Investment Group</div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="icon-container">
+            <span class="icon">💵</span>
+            <!-- Placeholder icon -->
+          </div>
+          <div class="feature-title">Pool Money</div>
+          <div class="feature-description">
+            Contribute funds towards your group
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="600">
+          <div class="icon-container">
+            <span class="icon">🤝</span>
+            <!-- Placeholder icon -->
+          </div>
+          <div class="feature-title">Trade Together</div>
+          <div class="feature-description">
+            Make trading decisions, to buy and sell stocks
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="800">
+          <div class="icon-container">
+            <span class="icon">🗳️</span>
+            <!-- Placeholder icon -->
+          </div>
+          <div class="feature-title">Vote and Purchase</div>
+          <div class="feature-description">
+            Vote on which stock to purcahse or sell
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 100px"></div>
+
+      <!-- In-depth Analysis Section 1 -->
+      <section class="analysis-section" data-aos="zoom-in-down">
+        <div class="analysis-content">
+          <img
+            class="analysis-image"
+            src="invite.png"
+            alt="Detailed Image 1"
+            style="width: 30%"
+          />
+          <div style="width: 15%"></div>
+
+          <div class="analysis-text">
+            <h2>Create and invite</h2>
+            <p>
+              Unlock the power of collaborative investing by creating a group
+              and inviting your friends to join. Our platform makes it easy to
+              assemble your team, whether they are seasoned investors or just
+              starting out. Combine your strengths, share knowledge, and work
+              towards common financial goals. Together, you can diversify your
+              portfolio, share the risk, and maximize the potential for returns.
+              It all starts with a simple invitation.
+            </p>
+            <!-- <a href="#" class="learn-more-btn">Learn More</a> -->
+          </div>
+        </div>
+      </section>
+
+      <!-- In-depth Analysis Section 2 -->
+      <section class="analysis-section" data-aos="zoom-in-down">
+        <div class="analysis-content">
+          <div class="analysis-text">
+            <h2>Analyse and make purcahse request</h2>
+            <p>
+              Stay informed and make smarter investment decisions with our
+              comprehensive stock information page. Access real-time data,
+              analyze trends, and get insights on the company’s financials and
+              recent news. When you've done your due diligence and found a
+              promising stock, submit a purchase request to your group.
+              Collaborative investing has never been this seamless and informed.
+            </p>
+          </div>
+          <div style="width: 9%"></div>
+
+          <img
+            class="analysis-image"
+            src="stock.png"
+            alt="Detailed Image 2"
+            style="width: 30%"
+          />
+        </div>
+      </section>
+
+      <section class="analysis-section" data-aos="zoom-in-down">
+        <div class="analysis-content">
+          <img
+            class="analysis-image"
+            src="requests.png"
+            alt="Detailed Image 1"
+            style="width: 30%"
+          />
+          <div style="width: 15%"></div>
+
+          <div class="analysis-text">
+            <h2>View requests and vote</h2>
+            <p>
+              Transparency and collective decision-making are at the heart of
+              our app. On the requests page, you can view all the stock purchase
+              requests made by your group members. Each member gets a vote,
+              ensuring everyone has a say in the group's investments. Discuss,
+              deliberate, and then cast your vote. Majority rules, so every vote
+              counts towards your group's financial success.
+            </p>
+            <!-- <a href="#" class="learn-more-btn">Learn More</a> -->
+          </div>
+        </div>
+      </section>
+
+      <div style="height: 100px"></div>
+
+      <section class="testimonials-section">
+        <center>
+          <div class="section-text" style="color: white">User Testimonials</div>
+        </center>
+        <div style="height: 80px"></div>
+
+        <div class="testimonials-wrapper">
+          <!-- Testimonial 1 -->
+          <div class="testimonial" data-aos="flip-up" data-aos-delay="100">
+            <blockquote>
+              "Syndicate boosts new investors' confidence by enabling group investments. It attracts those hesitant or new to investing, and educates people in the investment world.I like it."
+            </blockquote>
+            <p>- Zaim Khan</p>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="testimonial" data-aos="flip-up" data-aos-delay="200">
+            <blockquote>
+              "Syndicate helped me reignite my love for investing and build on it with my friends. It adds a personal aspect that makes me feel like stocks aren’t the only thing I’m investing in."
+            </blockquote>
+            <p>- Andrew Chang</p>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="testimonial" data-aos="flip-up" data-aos-delay="300">
+            <blockquote>
+              "Changed the way I approach my financial goals. A game-changer."
+            </blockquote>
+            <p>- User Name 3</p>
+          </div>
+        </div>
+      </section>
+    </section>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>
