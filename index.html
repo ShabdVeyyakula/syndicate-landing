@@ -20,6 +20,7 @@
         padding: 0;
         font-family: Poppins, sans-serif;
         overflow-x: hidden;
+        scroll-behavior:smooth
       }
 
       header {
@@ -77,7 +78,7 @@
       .header-sub-text {
         font-size: 18px;
         margin-top: 10px;
-        color: rgb(54, 54, 54);
+        color: rgb(173, 173, 173);
       }
 
       .landing-image {
@@ -272,16 +273,98 @@
         justify-content: space-between;
         align-items: flex-start;
       }
+
+      .card-container-mobile {
+        display: none;
+      }
+
+      .detail-mobile {
+        display: none;
+      }
+
+      .testimonials-wrapper-mobile {
+        display: none;
+      }
+
+      
+
+      @media screen and (min-width:375px) and (max-width:424px){
+        .landing-image {
+          visibility: hidden;
+      }
+
+      .header-sub-text {
+        font-size: 18px;
+        margin-top: 10px;
+        color: rgb(173, 173, 173);
+        text-align: center;
+        margin-top: 25%;
+      }
+
+      .header-main-text {
+        text-align: center;
+      }
+
+      .header-content {
+        max-width: 100%;
+      }
+
+      .card-container {
+        display: none
+      }
+
+      .card-container-mobile {
+        display: block;
+        justify-content: center;
+      }
+
+      .feature-card-mobile {
+        background-color: white;
+        width: 93%; /* Adjust as per requirement */
+        padding: 20px;
+        box-sizing: border-box;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        border-radius: 10px;
+        margin-left: 3%;
+        margin-top: 5%;
+      }
+
+      .detail {
+        display: none;
+      }
+
+      .detail-mobile {
+        display: block;
+      }
+
+      .testimonials-wrapper {
+        display: none;
+      }
+
+      .testimonials-wrapper-mobile {
+        display: block;
+      }
+      
+      .navbar {
+        margin-right: 10%;
+      }
+
+      .logo {
+        display: none;
+      }
+      
+    
+  }
     </style>
   </head>
   <body>
-    <header>
+    <header id="home">
       <div class="navbar">
         <div class="logo">Syndicate</div>
         <div class="navbar-links">
-          <a href="#">Home</a>
-          <a href="#">Service</a>
-          <a href="#">Testimonials</a>
+          <a href="#home">Home</a>
+          <a href="#service">Service</a>
+          <a href="#testimonials">Testimonials</a>
         </div>
       </div>
 
@@ -305,142 +388,278 @@
       </div>
     </header>
 
-    <section>
-      <div style="height: 50px"></div>
-      <center>
-        <div class="section-text">Group financial investment</div>
-      </center>
-
-      <div class="card-container">
-        <!-- Card 1 -->
-        <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="icon-container">
-            <span class="icon">👥</span>
-            <!-- Placeholder icon -->
+    <div id="service">
+      <section>
+        <div style="height: 50px"></div>
+        <center>
+          <div class="section-text">Group financial investment</div>
+        </center>
+  
+        <div class="card-container">
+          <!-- Card 1 -->
+          <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon-container">
+              <span class="icon">👥</span>
+              <!-- Placeholder icon -->
+            </div>
+            <div class="feature-title">Create Groups</div>
+            <div class="feature-description">Join or Create Investment Group</div>
           </div>
-          <div class="feature-title">Create Groups</div>
-          <div class="feature-description">Join or Create Investment Group</div>
+  
+          <!-- Card 2 -->
+          <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+            <div class="icon-container">
+              <span class="icon">💵</span>
+              <!-- Placeholder icon -->
+            </div>
+            <div class="feature-title">Pool Money</div>
+            <div class="feature-description">
+              Contribute funds towards your group
+            </div>
+          </div>
+  
+          <!-- Card 3 -->
+          <div class="feature-card" data-aos="fade-up" data-aos-delay="600">
+            <div class="icon-container">
+              <span class="icon">🤝</span>
+              <!-- Placeholder icon -->
+            </div>
+            <div class="feature-title">Trade Together</div>
+            <div class="feature-description">
+              Make trading decisions, to buy and sell stocks
+            </div>
+          </div>
+  
+          <!-- Card 4 -->
+          <div class="feature-card" data-aos="fade-up" data-aos-delay="800">
+            <div class="icon-container">
+              <span class="icon">🗳️</span>
+              <!-- Placeholder icon -->
+            </div>
+            <div class="feature-title">Vote and Purchase</div>
+            <div class="feature-description">
+              Vote on which stock to purcahse or sell
+            </div>
+          </div>
         </div>
 
-        <!-- Card 2 -->
-        <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
-          <div class="icon-container">
-            <span class="icon">💵</span>
-            <!-- Placeholder icon -->
+        <div class="card-container-mobile">
+
+          <div style="height: 60px;"></div>
+          <!-- Card 1 -->
+          <div class="feature-card-mobile" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon-container">
+              <span class="icon">👥</span>
+              <!-- Placeholder icon -->
+            </div>
+            <div class="feature-title">Create Groups</div>
+            <div class="feature-description">Join or Create Investment Group</div>
           </div>
-          <div class="feature-title">Pool Money</div>
-          <div class="feature-description">
-            Contribute funds towards your group
+  
+          <!-- Card 2 -->
+          <div class="feature-card-mobile" data-aos="fade-up" data-aos-delay="400">
+            <div class="icon-container">
+              <span class="icon">💵</span>
+              <!-- Placeholder icon -->
+            </div>
+            <div class="feature-title">Pool Money</div>
+            <div class="feature-description">
+              Contribute funds towards your group
+            </div>
           </div>
+  
+          <!-- Card 3 -->
+          <div class="feature-card-mobile" data-aos="fade-up" data-aos-delay="600">
+            <div class="icon-container">
+              <span class="icon">🤝</span>
+              <!-- Placeholder icon -->
+            </div>
+            <div class="feature-title">Trade Together</div>
+            <div class="feature-description">
+              Make trading decisions, to buy and sell stocks
+            </div>
+          </div>
+  
+          <!-- Card 4 -->
+          <div class="feature-card-mobile" data-aos="fade-up" data-aos-delay="800">
+            <div class="icon-container">
+              <span class="icon">🗳️</span>
+              <!-- Placeholder icon -->
+            </div>
+            <div class="feature-title">Vote and Purchase</div>
+            <div class="feature-description">
+              Vote on which stock to purcahse or sell
+            </div>
+          </div>
+        </div>
+  
+        <div style="height: 100px"></div>
+  
+        <!-- In-depth Analysis Section 1 -->
+
+        <div class="detail-mobile">
+          <section class="analysis-section-mobile" data-aos="zoom-in-down" style="display: flex; justify-content: center; align-items: center;  position: relative; margin-top: 50px;">
+            <div class="analysis-content-mobile">
+              <img
+                class="analysis-image"
+                src="invite.png"
+                alt="Detailed Image 1"
+                style="width: 60%; position: relative; left: 20%;"
+                />
+    
+              <div style="padding: 20px;">
+                <h2 style="text-align: center;">Create and invite</h2>
+                <p>
+                  Unlock the power of collaborative investing by creating a group
+                  and inviting your friends to join. Our platform makes it easy to
+                  assemble your team, whether they are seasoned investors or just
+                  starting out. Combine your strengths, share knowledge, and work
+                  towards common financial goals. Together, you can diversify your
+                  portfolio, share the risk, and maximize the potential for returns.
+                  It all starts with a simple invitation.
+                </p>
+                <!-- <a href="#" class="learn-more-btn">Learn More</a> -->
+              </div>
+            </div>
+          </section>
+    
+          <!-- In-depth Analysis Section 2 -->
+          <section class="analysis-section-mobile" data-aos="zoom-in-down" style="display: flex; justify-content: center; align-items: center;  position: relative; margin-top: 50px;">
+            <div class="analysis-content-mobile">
+
+              <img
+              class="analysis-image"
+              src="stock.png"
+              alt="Detailed Image 2"
+              style="width: 60%; position: relative; left: 20%;"
+              
+            />
+              <div style="padding: 20px;">
+                <h2 style="text-align: center;">Analyse and make purcahse request</h2>
+                <p>
+                  Stay informed and make smarter investment decisions with our
+                  comprehensive stock information page. Access real-time data,
+                  analyze trends, and get insights on the company’s financials and
+                  recent news. When you've done your due diligence and found a
+                  promising stock, submit a purchase request to your group.
+                  Collaborative investing has never been this seamless and informed.
+                </p>
+              </div>
+    
+
+            </div>
+          </section>
+    
+          <section class="analysis-section-mobile" data-aos="zoom-in-down" style="display: flex; justify-content: center; align-items: center;  position: relative; margin-top: 50px;">
+            <div class="analysis-content-mobile">
+              <img
+                class="analysis-image"
+                src="requests.png"
+                alt="Detailed Image 1"
+                style="width: 60%; position: relative; left: 20%;"
+                />
+    
+              <div style="padding: 20px;">
+                <h2 style="text-align: center;">View requests and vote</h2>
+                <p>
+                  Transparency and collective decision-making are at the heart of
+                  our app. On the requests page, you can view all the stock purchase
+                  requests made by your group members. Each member gets a vote,
+                  ensuring everyone has a say in the group's investments. Discuss,
+                  deliberate, and then cast your vote. Majority rules, so every vote
+                  counts towards your group's financial success.
+                </p>
+                <!-- <a href="#" class="learn-more-btn">Learn More</a> -->
+              </div>
+            </div>
+          </section>
         </div>
 
-        <!-- Card 3 -->
-        <div class="feature-card" data-aos="fade-up" data-aos-delay="600">
-          <div class="icon-container">
-            <span class="icon">🤝</span>
-            <!-- Placeholder icon -->
-          </div>
-          <div class="feature-title">Trade Together</div>
-          <div class="feature-description">
-            Make trading decisions, to buy and sell stocks
-          </div>
+        <div class="detail">
+          <section class="analysis-section" data-aos="zoom-in-down">
+            <div class="analysis-content">
+              <img
+                class="analysis-image"
+                src="invite.png"
+                alt="Detailed Image 1"
+                style="width: 30%"
+              />
+              <div style="width: 15%"></div>
+    
+              <div class="analysis-text">
+                <h2>Create and invite</h2>
+                <p>
+                  Unlock the power of collaborative investing by creating a group
+                  and inviting your friends to join. Our platform makes it easy to
+                  assemble your team, whether they are seasoned investors or just
+                  starting out. Combine your strengths, share knowledge, and work
+                  towards common financial goals. Together, you can diversify your
+                  portfolio, share the risk, and maximize the potential for returns.
+                  It all starts with a simple invitation.
+                </p>
+                <!-- <a href="#" class="learn-more-btn">Learn More</a> -->
+              </div>
+            </div>
+          </section>
+    
+          <!-- In-depth Analysis Section 2 -->
+          <section class="analysis-section" data-aos="zoom-in-down">
+            <div class="analysis-content">
+              <div class="analysis-text">
+                <h2>Analyse and make purcahse request</h2>
+                <p>
+                  Stay informed and make smarter investment decisions with our
+                  comprehensive stock information page. Access real-time data,
+                  analyze trends, and get insights on the company’s financials and
+                  recent news. When you've done your due diligence and found a
+                  promising stock, submit a purchase request to your group.
+                  Collaborative investing has never been this seamless and informed.
+                </p>
+              </div>
+              <div style="width: 9%"></div>
+    
+              <img
+                class="analysis-image"
+                src="stock.png"
+                alt="Detailed Image 2"
+                style="width: 30%"
+              />
+            </div>
+          </section>
+    
+          <section class="analysis-section" data-aos="zoom-in-down">
+            <div class="analysis-content">
+              <img
+                class="analysis-image"
+                src="requests.png"
+                alt="Detailed Image 1"
+                style="width: 30%"
+              />
+              <div style="width: 15%"></div>
+    
+              <div class="analysis-text">
+                <h2>View requests and vote</h2>
+                <p>
+                  Transparency and collective decision-making are at the heart of
+                  our app. On the requests page, you can view all the stock purchase
+                  requests made by your group members. Each member gets a vote,
+                  ensuring everyone has a say in the group's investments. Discuss,
+                  deliberate, and then cast your vote. Majority rules, so every vote
+                  counts towards your group's financial success.
+                </p>
+                <!-- <a href="#" class="learn-more-btn">Learn More</a> -->
+              </div>
+            </div>
+          </section>
         </div>
 
-        <!-- Card 4 -->
-        <div class="feature-card" data-aos="fade-up" data-aos-delay="800">
-          <div class="icon-container">
-            <span class="icon">🗳️</span>
-            <!-- Placeholder icon -->
-          </div>
-          <div class="feature-title">Vote and Purchase</div>
-          <div class="feature-description">
-            Vote on which stock to purcahse or sell
-          </div>
-        </div>
-      </div>
+    </div>
+
+
 
       <div style="height: 100px"></div>
 
-      <!-- In-depth Analysis Section 1 -->
-      <section class="analysis-section" data-aos="zoom-in-down">
-        <div class="analysis-content">
-          <img
-            class="analysis-image"
-            src="invite.png"
-            alt="Detailed Image 1"
-            style="width: 30%"
-          />
-          <div style="width: 15%"></div>
-
-          <div class="analysis-text">
-            <h2>Create and invite</h2>
-            <p>
-              Unlock the power of collaborative investing by creating a group
-              and inviting your friends to join. Our platform makes it easy to
-              assemble your team, whether they are seasoned investors or just
-              starting out. Combine your strengths, share knowledge, and work
-              towards common financial goals. Together, you can diversify your
-              portfolio, share the risk, and maximize the potential for returns.
-              It all starts with a simple invitation.
-            </p>
-            <!-- <a href="#" class="learn-more-btn">Learn More</a> -->
-          </div>
-        </div>
-      </section>
-
-      <!-- In-depth Analysis Section 2 -->
-      <section class="analysis-section" data-aos="zoom-in-down">
-        <div class="analysis-content">
-          <div class="analysis-text">
-            <h2>Analyse and make purcahse request</h2>
-            <p>
-              Stay informed and make smarter investment decisions with our
-              comprehensive stock information page. Access real-time data,
-              analyze trends, and get insights on the company’s financials and
-              recent news. When you've done your due diligence and found a
-              promising stock, submit a purchase request to your group.
-              Collaborative investing has never been this seamless and informed.
-            </p>
-          </div>
-          <div style="width: 9%"></div>
-
-          <img
-            class="analysis-image"
-            src="stock.png"
-            alt="Detailed Image 2"
-            style="width: 30%"
-          />
-        </div>
-      </section>
-
-      <section class="analysis-section" data-aos="zoom-in-down">
-        <div class="analysis-content">
-          <img
-            class="analysis-image"
-            src="requests.png"
-            alt="Detailed Image 1"
-            style="width: 30%"
-          />
-          <div style="width: 15%"></div>
-
-          <div class="analysis-text">
-            <h2>View requests and vote</h2>
-            <p>
-              Transparency and collective decision-making are at the heart of
-              our app. On the requests page, you can view all the stock purchase
-              requests made by your group members. Each member gets a vote,
-              ensuring everyone has a say in the group's investments. Discuss,
-              deliberate, and then cast your vote. Majority rules, so every vote
-              counts towards your group's financial success.
-            </p>
-            <!-- <a href="#" class="learn-more-btn">Learn More</a> -->
-          </div>
-        </div>
-      </section>
-
-      <div style="height: 100px"></div>
-
-      <section class="testimonials-section">
+      <section class="testimonials-section" id="testimonials">
         <center>
           <div class="section-text" style="color: white">User Testimonials</div>
         </center>
@@ -471,7 +690,34 @@
             <p>- Kushagra Singh</p>
           </div>
         </div>
+
+        <div class="testimonials-wrapper-mobile">
+          <!-- Testimonial 1 -->
+          <div class="testimonial" data-aos="flip-up" data-aos-delay="100" style="width: 80%; margin-left: 10%;">
+            <blockquote>
+              "Syndicate boosts new investors' confidence by enabling group investments. It attracts those hesitant or new to investing, and educates people in the investment world.I like it."
+            </blockquote>
+            <p>- Zaim Khan</p>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="testimonial" data-aos="flip-up" data-aos-delay="200" style="width: 80%; margin-left: 10%;">
+            <blockquote>
+              "Syndicate helped me reignite my love for investing and build on it with my friends. It adds a personal aspect that makes me feel like stocks aren’t the only thing I’m investing in."
+            </blockquote>
+            <p>- Andrew Chang</p>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="testimonial" data-aos="flip-up" data-aos-delay="300" style="width: 80%; margin-left: 10%;">
+            <blockquote>
+              "Syndicate brings a sense of fun and excitment to what's usually a serious and dull activity. It goes beyond simple transactions—it's a shared experience of growth and learning."
+            </blockquote>
+            <p>- Kushagra Singh</p>
+          </div>
+        </div>
       </section>
+
     </section>
     <script>
       AOS.init();
